@@ -1,8 +1,8 @@
 package/extools/build: ## DEV Build
-	@cd modules/exciton-package-tools && rm -rf exciton.egg-info && python3 setup.py sdist bdist_wheel
+	@cd modules/exciton-package-tools && rm -rf extools.egg-info && python3 setup.py sdist bdist_wheel
 
 package/extools/build_and_install: ## DEV build and install
-	@cd modules/exciton-package-tools && rm -rf exciton.egg-info && python3 setup.py sdist bdist_wheel && pip install -U .
+	@cd modules/exciton-package-tools && rm -rf extools.egg-info && python3 setup.py sdist bdist_wheel && pip install -U .
 
 package/extools/release: guard-V ## Release the package
 	@cd modules/exciton-package-tools && bump2version $(V) && git push --tags
