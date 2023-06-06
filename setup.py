@@ -5,7 +5,7 @@ from setuptools import setup
 
 # Remove stale exciton.egg-info directory to avoid
 # https://github.com/pypa/pip/issues/5466
-stale_egg_info = Path(__file__).parent / "exciton.egg-info"
+stale_egg_info = Path(__file__).parent / "extools.egg-info"
 if stale_egg_info.exists():
     print(
         (
@@ -25,10 +25,10 @@ with open("requirements.txt", "r") as fp:
 __version__ = "2.0.7"
 
 setup(
-    name="exciton",
+    name="extools",
     version=__version__,
-    keywords="exciton NLP Deep Learning",
-    description="Domain-specific Natural Language Processing with exciton",
+    keywords="exciton tools",
+    description="Exciton Infrastructure Tools",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     classifiers=[
@@ -36,10 +36,10 @@ setup(
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 3",
-        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        "Topic :: Scientific/Engineering :: Machine Learning Infrastructure",
     ],
-    url="https://exciton.com",
-    author="The ExcitonX Team",
+    url="https://excitonx.com",
+    author="The Exciton Research",
     author_email="excitonx@gmail.com",
     package_dir={"": "."},
     package_data={".": ["*.txt"]},
@@ -48,22 +48,8 @@ setup(
     },
     include_package_data=True,
     packages=[
-        "exciton",
-        "exciton.ml",
-        "exciton.ml.classification",
-        "exciton.ml.classification.xlm_roberta",
-        "exciton.ml.engine",
-        "exciton.ml.tagging",
-        "exciton.ml.tagging.bert",
-        "exciton.nlp",
-        "exciton.nlp.event_detection",
-        "exciton.nlp.lang_detection",
-        "exciton.nlp.named_entity_recognition",
-        "exciton.nlp.sentence_tokenizer",
-        "exciton.nlp.text_matching",
-        "exciton.nlp.topic_relevance",
-        "exciton.nlp.translation",
-        "exciton.nlp.translation.m2m100",
+        "extools",
+        "extools.ml"
     ],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],
