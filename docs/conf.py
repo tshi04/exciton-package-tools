@@ -16,12 +16,12 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
-project = "Exciton NLP"
+project = "Exciton Extools"
 copyright = "2023, Exciton Team"
 author = "Exciton Team"
 
 # The full version, including alpha/beta/rc tags
-release = "1.0.0"
+release = "latest"
 
 
 # -- General configuration ---------------------------------------------------

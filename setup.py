@@ -49,7 +49,8 @@ setup(
     include_package_data=True,
     packages=[
         "extools",
-        "extools.ml"
+        "extools.elasticsearch",
+        "extools.rabbitmq"
     ],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],

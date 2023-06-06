@@ -11,6 +11,6 @@ package/extools/release: guard-V ## Release the package
 
 package/extools/docs: ## Build documentation
 	@cd modules/exciton-package-tools/docs && make clean && (rm -r source || true ) && make clean html
-	@cd modules/exciton-package-tools/docs && sphinx-apidoc --force -o source ../exciton/
+	@cd modules/exciton-package-tools/docs && sphinx-apidoc --force -o source ../extools
 	@cd modules/exciton-package-tools/docs && make html
-	@(rm -r /var/www/html/exciton || true) && cd modules/exciton-package-tools/docs/_build && cp -r html /var/www/html/exciton
+	@(rm -r /var/www/html/extools || true) && cd modules/exciton-package-tools/docs/_build && cp -r html /var/www/html/extools
