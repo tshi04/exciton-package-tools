@@ -1,5 +1,5 @@
 exciton_tools
-=======
+=============
 
 .. toctree::
    :maxdepth: 4

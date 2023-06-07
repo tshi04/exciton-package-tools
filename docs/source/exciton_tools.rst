@@ -1,5 +1,5 @@
-exciton_tools package
-===============
+exciton\_tools package
+======================
 
 Subpackages
 -----------

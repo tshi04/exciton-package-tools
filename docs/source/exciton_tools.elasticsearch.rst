@@ -1,11 +1,11 @@
-exciton_tools.elasticsearch package
-=============================
+exciton\_tools.elasticsearch package
+====================================
 
 Submodules
 ----------
 
-exciton_tools.elasticsearch.document module
--------------------------------------
+exciton\_tools.elasticsearch.document module
+--------------------------------------------
 
 .. automodule:: exciton_tools.elasticsearch.document
    :members:

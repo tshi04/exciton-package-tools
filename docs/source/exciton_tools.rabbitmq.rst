@@ -1,11 +1,11 @@
-exciton_tools.rabbitmq package
-========================
+exciton\_tools.rabbitmq package
+===============================
 
 Submodules
 ----------
 
-exciton_tools.rabbitmq.document module
---------------------------------
+exciton\_tools.rabbitmq.document module
+---------------------------------------
 
 .. automodule:: exciton_tools.rabbitmq.document
    :members:
