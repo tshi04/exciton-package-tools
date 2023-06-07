@@ -17,7 +17,19 @@ def send_messages_to_exchange(
     routing_key: str,
     messages: List[str],
 ):
-    # rabbitmq
+    """_summary_
+
+    Args:
+        host (str): _description_
+        port (str): _description_
+        virtual_host (str): _description_
+        username (str): _description_
+        password (str): _description_
+        exchange_name (str): _description_
+        exchange_type (str): _description_
+        routing_key (str): _description_
+        messages (List[str]): _description_
+    """
     credentials = pika.PlainCredentials(username=username, password=password)
     connectparam = pika.ConnectionParameters(
         host=host,
