@@ -16,9 +16,9 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
-project = "Exciton exciton_tools"
-copyright = "2023, Exciton Team"
-author = "Exciton Team"
+project = "Exciton Tools"
+copyright = "2023, The Exciton Research"
+author = "The Exciton Research Team"
 
 # The full version, including alpha/beta/rc tags
 release = "latest"
