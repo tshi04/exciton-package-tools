@@ -1,9 +1,9 @@
-# Exciton NLP - A tool for natural language processing
+# Exciton Tools
 
-Exciton NLP is designed and maintained by ExcitonX for different NLP tasks, including multilingual classification, NER, translation, etc.
+Exciton Tools are a collection of functions and classes developed by the Exciton Research team for infrastructures, pipelines, etc.
 
 ## Installation
-Use ``pip`` to install exciton. Run:
+Use ``pip`` to install exciton_tools. Run:
 
 ```
 pip install -U exciton_tools
