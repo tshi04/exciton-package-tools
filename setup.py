@@ -36,7 +36,7 @@ setup(
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 3",
-        "Topic :: SCIENTIFIC/ENGINEERING :: ARTIFICIAL INTELLIGENCE",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     url="https://excitonx.com",
     author="The Exciton Research",
