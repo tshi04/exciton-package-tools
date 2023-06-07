@@ -6,20 +6,15 @@ Exciton NLP is designed and maintained by ExcitonX for different NLP tasks, incl
 Use ``pip`` to install exciton. Run:
 
 ```
-pip install -U exciton
+pip install -U exciton_tools
 ```
 
 ## Usage
 
 ```
 
-from exciton.nlp.translation import M2M100
+from exciton_tools.elasticsearch import get_all_documents
 
-model = M2M100(model="m2m100_1.2b", device="cuda")
-source = [
-    {"id": 1, "source": "I love you!", "source_lang": "en", "target_lang": "zh"},
-    {"id": 2, "source": "我爱你！", "source_lang": "zh", "target_lang": "en"}
-]
-results = model.predict(source)
+
 
 ```
