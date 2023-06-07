@@ -22,7 +22,7 @@ with open("requirements.txt", "r") as fp:
         if line[0] != "#":
             dep_packages.append(str(line.strip()))
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 setup(
     name="extools",
@@ -47,11 +47,7 @@ setup(
         "exciton": ["trainer/*", "trainer/*/*", "research/*", "research/*/*"]
     },
     include_package_data=True,
-    packages=[
-        "extools",
-        "extools.elasticsearch",
-        "extools.rabbitmq"
-    ],
+    packages=["extools", "extools.elasticsearch", "extools.rabbitmq"],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],
     python_requires=">=3.8",
