@@ -16,7 +16,7 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
-project = "Exciton Extools"
+project = "Exciton exciton_tools"
 copyright = "2023, Exciton Team"
 author = "Exciton Team"
 

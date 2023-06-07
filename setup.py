@@ -5,7 +5,7 @@ from setuptools import setup
 
 # Remove stale exciton.egg-info directory to avoid
 # https://github.com/pypa/pip/issues/5466
-stale_egg_info = Path(__file__).parent / "extools.egg-info"
+stale_egg_info = Path(__file__).parent / "exciton_tools.egg-info"
 if stale_egg_info.exists():
     print(
         (
@@ -25,7 +25,7 @@ with open("requirements.txt", "r") as fp:
 __version__ = "0.0.6"
 
 setup(
-    name="extools",
+    name="exciton_tools",
     version=__version__,
     keywords="exciton tools",
     description="Exciton Infrastructure Tools",
@@ -47,7 +47,7 @@ setup(
         "exciton": ["trainer/*", "trainer/*/*", "research/*", "research/*/*"]
     },
     include_package_data=True,
-    packages=["extools", "extools.elasticsearch", "extools.rabbitmq"],
+    packages=["exciton_tools", "exciton_tools.elasticsearch", "exciton_tools.rabbitmq"],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],
     python_requires=">=3.8",

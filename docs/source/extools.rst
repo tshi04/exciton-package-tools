@@ -1,4 +1,4 @@
-extools package
+exciton_tools package
 ===============
 
 Subpackages
@@ -7,13 +7,13 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   extools.elasticsearch
-   extools.rabbitmq
+   exciton_tools.elasticsearch
+   exciton_tools.rabbitmq
 
 Module contents
 ---------------
 
-.. automodule:: extools
+.. automodule:: exciton_tools
    :members:
    :undoc-members:
    :show-inheritance:

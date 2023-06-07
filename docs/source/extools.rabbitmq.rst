@@ -1,13 +1,13 @@
-extools.rabbitmq package
+exciton_tools.rabbitmq package
 ========================
 
 Submodules
 ----------
 
-extools.rabbitmq.document module
+exciton_tools.rabbitmq.document module
 --------------------------------
 
-.. automodule:: extools.rabbitmq.document
+.. automodule:: exciton_tools.rabbitmq.document
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ extools.rabbitmq.document module
 Module contents
 ---------------
 
-.. automodule:: extools.rabbitmq
+.. automodule:: exciton_tools.rabbitmq
    :members:
    :undoc-members:
    :show-inheritance:

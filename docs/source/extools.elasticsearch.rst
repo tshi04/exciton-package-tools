@@ -1,13 +1,13 @@
-extools.elasticsearch package
+exciton_tools.elasticsearch package
 =============================
 
 Submodules
 ----------
 
-extools.elasticsearch.document module
+exciton_tools.elasticsearch.document module
 -------------------------------------
 
-.. automodule:: extools.elasticsearch.document
+.. automodule:: exciton_tools.elasticsearch.document
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ extools.elasticsearch.document module
 Module contents
 ---------------
 
-.. automodule:: extools.elasticsearch
+.. automodule:: exciton_tools.elasticsearch
    :members:
    :undoc-members:
    :show-inheritance:

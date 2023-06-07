@@ -1,7 +1,7 @@
-extools
+exciton_tools
 =======
 
 .. toctree::
    :maxdepth: 4
 
-   extools
+   exciton_tools
