@@ -17,18 +17,18 @@ def send_messages_to_exchange(
     routing_key: str,
     messages: List[str],
 ):
-    """send messages to an exchange
+    """Send messages to an exchange.
 
     Args:
         host (str): host
-        port (str): port
+        port (str): port (amqp)
         virtual_host (str): virtual host
         username (str): username
         password (str): password
         exchange_name (str): exchange name
         exchange_type (str): exchange type
         routing_key (str): rounting key
-        messages (List[str]): message
+        messages (List[str]): list of messages.
     """
     credentials = pika.PlainCredentials(username=username, password=password)
     connectparam = pika.ConnectionParameters(
@@ -50,3 +50,41 @@ def send_messages_to_exchange(
             body=message,
         )
     connection.close()
+
+
+def get_rmq_queue_length(
+    host: str,
+    port: str,
+    virtual_host: str,
+    username: str,
+    password: str,
+    queue_name: str,
+) -> int:
+    """Get the length of RabbitMQ queue.
+
+    Args:
+        host (str): host
+        port (str): port (amqp)
+        virtual_host (str): virtual host
+        username (str): username
+        password (str): password
+        queue_name (str): queue name
+    """
+    # RABBITMQ
+    credentials = pika.PlainCredentials(
+        username=username,
+        password=password,
+    )
+    connectparam = pika.ConnectionParameters(
+        host=host,
+        port=port,
+        virtual_host=virtual_host,
+        credentials=credentials,
+        heartbeat=0,
+    )
+    connection = pika.BlockingConnection(connectparam)
+    channel = connection.channel()
+    resp = channel.queue_declare(queue=queue_name, durable=True)
+    channel.close()
+
+    return resp.method.message_count
