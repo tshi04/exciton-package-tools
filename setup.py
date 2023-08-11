@@ -39,13 +39,11 @@ setup(
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     url="https://excitonx.com",
-    author="The Exciton Research",
+    author="The Exciton Research Team",
     author_email="excitonx@gmail.com",
     package_dir={"": "."},
     package_data={".": ["*.txt"]},
-    exclude_package_data={
-        "exciton": ["trainer/*", "trainer/*/*", "research/*", "research/*/*"]
-    },
+    exclude_package_data={"exciton": ["notebooks/*"]},
     include_package_data=True,
     packages=["exciton_tools", "exciton_tools.elasticsearch", "exciton_tools.rabbitmq"],
     install_requires=dep_packages,

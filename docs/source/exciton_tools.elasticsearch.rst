@@ -4,10 +4,10 @@ exciton\_tools.elasticsearch package
 Submodules
 ----------
 
-exciton\_tools.elasticsearch.document module
---------------------------------------------
+exciton\_tools.elasticsearch.service module
+-------------------------------------------
 
-.. automodule:: exciton_tools.elasticsearch.document
+.. automodule:: exciton_tools.elasticsearch.service
    :members:
    :undoc-members:
    :show-inheritance:
