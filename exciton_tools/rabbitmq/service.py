@@ -17,18 +17,18 @@ def send_messages_to_exchange(
     routing_key: str,
     messages: List[str],
 ):
-    """_summary_
+    """send messages to an exchange
 
     Args:
-        host (str): _description_
-        port (str): _description_
-        virtual_host (str): _description_
-        username (str): _description_
-        password (str): _description_
-        exchange_name (str): _description_
-        exchange_type (str): _description_
-        routing_key (str): _description_
-        messages (List[str]): _description_
+        host (str): host
+        port (str): port
+        virtual_host (str): virtual host
+        username (str): username
+        password (str): password
+        exchange_name (str): exchange name
+        exchange_type (str): exchange type
+        routing_key (str): rounting key
+        messages (List[str]): message
     """
     credentials = pika.PlainCredentials(username=username, password=password)
     connectparam = pika.ConnectionParameters(
