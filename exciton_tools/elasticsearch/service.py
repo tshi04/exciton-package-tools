@@ -12,13 +12,13 @@ def get_all_docs(
     query: Dict[str, Any] = {"match_all": {}},
     get_source: bool = True,
 ) -> Dict[str, Any]:
-    """_summary_
+    """Get all documents of an index that match the query.
 
     Args:
-        client (Elasticsearch): _description_
-        index (str): _description_
-        query (_type_, optional): _description_. Defaults to {"match_all": {}}.
-        get_source (bool, optional): _description_. Defaults to True.
+        client (Elasticsearch): client
+        index (str): index name.
+        query (_type_, optional): query. Defaults to {"match_all": {}}.
+        get_source (bool, optional): if get source or not. Defaults to True.
 
     Returns:
         Dict[str, Any]: _description_
