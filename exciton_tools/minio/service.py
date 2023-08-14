@@ -3,7 +3,7 @@ import logging
 from minio import Minio
 
 
-def download_data_from_minio(
+def download_file_from_minio(
     host: str,
     port: str,
     access_key: str,
