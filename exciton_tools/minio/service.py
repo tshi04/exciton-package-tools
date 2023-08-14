@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from minio import Minio
 
@@ -79,3 +80,36 @@ def upload_file_to_minio(
         file_path=file_path,
     )
     logging.info("Upload finished...")
+
+
+def get_objects_from_bucket(
+    host: str,
+    port: str,
+    access_key: str,
+    secret_key: str,
+    use_ssl: bool,
+    bucket_name: str,
+) -> List[str]:
+    """Upload a file to Minio.
+
+    Args:
+        host (str): minio host
+        port (str): minio port
+        access_key (str): access key
+        secret_key (str): secret key
+        use_ssl (bool): use ssl
+        bucket_name (str): bucket name
+    """
+    endpoint = f"{host}:{port}"
+    minio_client = Minio(
+        endpoint=endpoint,
+        access_key=access_key,
+        secret_key=secret_key,
+        secure=use_ssl,
+    )
+    ccnews_files = []
+    objects = minio_client.list_objects(bucket_name=bucket_name)
+    for itm in objects:
+        ccnews_files.append(itm.object_name)
+    logging.info(f"There are {len(ccnews_files)} files in the minio...")
+    return ccnews_files
