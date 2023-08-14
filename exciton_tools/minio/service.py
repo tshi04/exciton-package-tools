@@ -38,3 +38,30 @@ def download_file_from_minio(
         object_name=object_name,
         file_path=file_path,
     )
+
+
+def upload_file_to_minio(
+    host: str,
+    port: str,
+    access_key: str,
+    secret_key: str,
+    use_ssl: bool,
+    bucket_name: str,
+    object_name: str,
+    file_path: str,
+):
+    endpoint = f"{host}:{port}"
+    minio_client = Minio(
+        endpoint=endpoint,
+        access_key=access_key,
+        secret_key=secret_key,
+        secure=use_ssl,
+    )
+    logging.info(f"upload file to {bucket_name}...")
+    if not minio_client.bucket_exists(bucket_name):
+        minio_client.make_bucket(bucket_name)
+    minio_client.fput_object(
+        bucket_name=bucket_name,
+        object_name=object_name,
+        file_path=file_path,
+    )
