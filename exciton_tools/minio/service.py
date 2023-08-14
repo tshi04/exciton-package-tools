@@ -38,6 +38,7 @@ def download_file_from_minio(
         object_name=object_name,
         file_path=file_path,
     )
+    logging.info("Download finished...")
 
 
 def upload_file_to_minio(
@@ -50,6 +51,18 @@ def upload_file_to_minio(
     object_name: str,
     file_path: str,
 ):
+    """Upload a file to Minio.
+
+    Args:
+        host (str): minio host
+        port (str): minio port
+        access_key (str): access key
+        secret_key (str): secret key
+        use_ssl (bool): use ssl
+        bucket_name (str): bucket name
+        object_name (str): object name
+        file_path (str): local file full path.
+    """
     endpoint = f"{host}:{port}"
     minio_client = Minio(
         endpoint=endpoint,
@@ -65,3 +78,4 @@ def upload_file_to_minio(
         object_name=object_name,
         file_path=file_path,
     )
+    logging.info("Upload finished...")
