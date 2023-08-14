@@ -45,7 +45,12 @@ setup(
     package_data={".": ["*.txt"]},
     exclude_package_data={"exciton": ["notebooks/*"]},
     include_package_data=True,
-    packages=["exciton_tools", "exciton_tools.elasticsearch", "exciton_tools.rabbitmq"],
+    packages=[
+        "exciton_tools",
+        "exciton_tools.elasticsearch",
+        "exciton_tools.rabbitmq",
+        "exciton_tools.minio",
+    ],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],
     python_requires=">=3.8",
