@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    exciton_tools.elasticsearch
+   exciton_tools.minio
    exciton_tools.rabbitmq
 
 Module contents

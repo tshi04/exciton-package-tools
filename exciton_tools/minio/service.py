@@ -90,7 +90,7 @@ def get_objects_from_bucket(
     use_ssl: bool,
     bucket_name: str,
 ) -> List[str]:
-    """Upload a file to Minio.
+    """Get all objects in a bucket.
 
     Args:
         host (str): minio host
