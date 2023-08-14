@@ -111,5 +111,5 @@ def get_objects_from_bucket(
     objects = minio_client.list_objects(bucket_name=bucket_name)
     for itm in objects:
         ccnews_files.append(itm.object_name)
-    logging.info(f"There are {len(ccnews_files)} files in the minio...")
+    logging.info(f"There are {len(ccnews_files)} files in the bucket...")
     return ccnews_files
