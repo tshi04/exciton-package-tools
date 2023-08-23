@@ -149,3 +149,4 @@ def delete_objects_from_bucket(
             messages.append({"status": "success", "object": obj, "message": ""})
         except Exception as err:
             messages.append({"status": "failed", "object": obj, "message": str(err)})
+    return messages
