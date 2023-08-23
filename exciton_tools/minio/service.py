@@ -113,3 +113,34 @@ def get_objects_from_bucket(
         ccnews_files.append(itm.object_name)
     logging.info(f"There are {len(ccnews_files)} files in the bucket...")
     return ccnews_files
+
+
+def delete_objects_from_bucket(
+    host: str,
+    port: str,
+    access_key: str,
+    secret_key: str,
+    use_ssl: bool,
+    bucket_name: str,
+    objects: List[str],
+) -> List[str]:
+    """Get all objects in a bucket.
+
+    Args:
+        host (str): minio host
+        port (str): minio port
+        access_key (str): access key
+        secret_key (str): secret key
+        use_ssl (bool): use ssl
+        bucket_name (str): bucket name
+        object_names
+    """
+    endpoint = f"{host}:{port}"
+    minio_client = Minio(
+        endpoint=endpoint,
+        access_key=access_key,
+        secret_key=secret_key,
+        secure=use_ssl,
+    )
+    for obj in objects:
+        minio_client.remove_object(bucket_name=bucket_name, object_name=obj)
