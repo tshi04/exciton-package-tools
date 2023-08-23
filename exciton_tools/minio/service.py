@@ -1,5 +1,5 @@
 import logging
-from typing import List
+from typing import Any, Dict, List
 
 from minio import Minio
 
@@ -123,7 +123,7 @@ def delete_objects_from_bucket(
     use_ssl: bool,
     bucket_name: str,
     objects: List[str],
-) -> List[str]:
+) -> List[Dict[str, Any]]:
     """Delete a list of objects in a bucket.
 
     Args:
