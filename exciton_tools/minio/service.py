@@ -142,5 +142,10 @@ def delete_objects_from_bucket(
         secret_key=secret_key,
         secure=use_ssl,
     )
+    messages = []
     for obj in objects:
-        minio_client.remove_object(bucket_name=bucket_name, object_name=obj)
+        try:
+            minio_client.remove_object(bucket_name=bucket_name, object_name=obj)
+            messages.append({"status": "success", "object": obj, "message": ""})
+        except Exception as err:
+            messages.append({"status": "failed", "object": obj, "message": str(err)})
