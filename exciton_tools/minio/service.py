@@ -124,7 +124,7 @@ def delete_objects_from_bucket(
     bucket_name: str,
     objects: List[str],
 ) -> List[str]:
-    """Get all objects in a bucket.
+    """Delete a list of objects in a bucket.
 
     Args:
         host (str): minio host
@@ -133,7 +133,7 @@ def delete_objects_from_bucket(
         secret_key (str): secret key
         use_ssl (bool): use ssl
         bucket_name (str): bucket name
-        object_names
+        objects (List[str]): list of objects.
     """
     endpoint = f"{host}:{port}"
     minio_client = Minio(
