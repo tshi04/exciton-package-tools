@@ -8,7 +8,7 @@ from elasticsearch import Elasticsearch
 urllib3.disable_warnings()
 
 
-def data_dump_json(
+def dump_data_json(
     client: Elasticsearch,
     index_name: str,
     file_name: str,
