@@ -1,9 +1,34 @@
+import gzip
+import json
 from typing import Any, Dict
 
 import urllib3
 from elasticsearch import Elasticsearch
 
 urllib3.disable_warnings()
+
+
+def data_dump_json(
+    client: Elasticsearch,
+    index_name: str,
+    file_name: str,
+    path_to_file: str = "/tmp",
+):
+    """Dump data to json gzip.
+
+    Args:
+        client (Elasticsearch): client.
+        index_name (str): index name.
+        file_name (str): local file name.
+        path_to_file (str, optional): path to the file. Defaults to "/tmp".
+    """
+    docs = get_all_docs(client=client, index=index_name)
+    file_name = f"{path_to_file}/{file_name}"
+    fout = gzip.open(file_name, "wt")
+    for itm in docs:
+        json.dump(itm, fout)
+        fout.write("\n")
+    fout.close()
 
 
 def get_all_docs(
