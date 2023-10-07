@@ -82,7 +82,7 @@ def upload_file_to_minio(
     logging.info("Upload finished...")
 
 
-def get_objects_from_bucket(
+def list_objects_in_bucket(
     host: str,
     port: str,
     access_key: str,
@@ -92,7 +92,7 @@ def get_objects_from_bucket(
     prefix: str = None,
     recursive: bool = False,
 ) -> List[str]:
-    """Get all objects in a bucket.
+    """List objects in a bucket.
 
     Args:
         host (str): minio host
