@@ -89,6 +89,8 @@ def get_objects_from_bucket(
     secret_key: str,
     use_ssl: bool,
     bucket_name: str,
+    prefix: str = None,
+    recursive: bool = False,
 ) -> List[str]:
     """Get all objects in a bucket.
 
@@ -99,6 +101,11 @@ def get_objects_from_bucket(
         secret_key (str): secret key
         use_ssl (bool): use ssl
         bucket_name (str): bucket name
+        prefix (str, optional): folders. Defaults to None.
+        recursive (bool, optional): recursive subfolders. Defaults to False.
+
+    Returns:
+        List[str]: list of files.
     """
     endpoint = f"{host}:{port}"
     minio_client = Minio(
@@ -108,7 +115,9 @@ def get_objects_from_bucket(
         secure=use_ssl,
     )
     ccnews_files = []
-    objects = minio_client.list_objects(bucket_name=bucket_name)
+    objects = minio_client.list_objects(
+        bucket_name=bucket_name, prefix=prefix, recursive=recursive
+    )
     for itm in objects:
         ccnews_files.append(itm.object_name)
     logging.info(f"There are {len(ccnews_files)} files in the bucket...")
