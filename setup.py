@@ -48,8 +48,9 @@ setup(
     packages=[
         "exciton_tools",
         "exciton_tools.elasticsearch",
-        "exciton_tools.rabbitmq",
         "exciton_tools.minio",
+        "exciton_tools.rabbitmq",
+        "exciton_tools.redis",
     ],
     install_requires=dep_packages,
     setup_requires=["pytest-runner"],
