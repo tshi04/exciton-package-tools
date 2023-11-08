@@ -4,7 +4,7 @@ import redis
 
 
 def get_worker_flag(
-    host: str, port: str, password: str, work_flag: str, time_threshold: int = 300
+    host: str, port: str, password: str, work_flag: str, time_refresh: int = 300
 ) -> bool:
     """Get if there is an existing work flag.
 
@@ -29,7 +29,7 @@ def get_worker_flag(
         nowtime = datetime.utcnow()
         difftime = nowtime - mytime
         difftime = difftime.seconds
-        if difftime > time_threshold:
+        if difftime > time_refresh:
             redis_client.delete(work_flag)
             return False
         else:

@@ -14,7 +14,11 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
     """
 
     def work_flag_worker(
-        redis_host: str, redis_port: str, redis_password: str, work_flag: str
+        redis_host: str,
+        redis_port: str,
+        redis_password: str,
+        work_flag: str,
+        time_refresh: int = 300,
     ) -> bool:
         """work flag
 
@@ -23,6 +27,7 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
             redis_port (str): redis port
             redis_password (str): password
             work_flag (str): work flag sign
+            time_refresh (int, optional): time to refresh. Defaults to 300.
 
         Returns:
             bool: exising worker.
@@ -32,6 +37,7 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
             port=redis_port,
             password=redis_password,
             work_flag=work_flag,
+            time_refresh=time_refresh,
         )
         if not status:
             set_work_flag(
@@ -40,7 +46,13 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
                 password=redis_password,
                 work_flag=work_flag,
             )
-            myfunction(redis_host, redis_port, redis_password, work_flag)
+            myfunction(
+                redis_host,
+                redis_port,
+                redis_password,
+                work_flag,
+                time_refresh,
+            )
             delete_work_flag(
                 host=redis_host,
                 port=redis_port,
