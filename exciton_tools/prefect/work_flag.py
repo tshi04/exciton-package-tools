@@ -39,8 +39,6 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
             work_flag=work_flag,
             time_refresh=time_refresh,
         )
-        for _ in range(20):
-            print(status)
         if not status:
             set_work_flag(
                 host=redis_host,
