@@ -9,6 +9,7 @@ Subpackages
 
    exciton_tools.elasticsearch
    exciton_tools.minio
+   exciton_tools.prefect
    exciton_tools.rabbitmq
    exciton_tools.redis
 
