@@ -13,7 +13,7 @@ def get_worker_flag(
         port (str): redis port
         password (str): redis password
         work_flag (str): work flag
-        time_threshold (int, optional): time to reset. Defaults to 300.
+        time_refresh (int, optional): time to reset. Defaults to 300.
 
     Returns:
         bool: if there is an existing worker.
