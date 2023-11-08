@@ -22,7 +22,7 @@ with open("requirements.txt", "r") as fp:
         if line[0] != "#":
             dep_packages.append(str(line.strip()))
 
-__version__ = "0.4.2"
+__version__ = "0.4.3"
 
 setup(
     name="exciton_tools",
