@@ -3,10 +3,30 @@ from typing import Callable
 from exciton_tools.redis import delete_work_flag, get_worker_flag, set_work_flag
 
 
-def decorator_work_flag(myfunction: Callable):
+def decorator_work_flag(myfunction: Callable) -> Callable:
+    """a work flag decorator.
+
+    Args:
+        myfunction (Callable): the function to pass.
+
+    Returns:
+        Callable: decorate function.
+    """
+
     def work_flag_worker(
         redis_host: str, redis_port: str, redis_password: str, work_flag: str
     ) -> bool:
+        """work flag
+
+        Args:
+            redis_host (str): redis host
+            redis_port (str): redis port
+            redis_password (str): password
+            work_flag (str): work flag sign
+
+        Returns:
+            bool: exising worker.
+        """
         status = get_worker_flag(
             host=redis_host,
             port=redis_port,
