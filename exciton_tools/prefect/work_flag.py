@@ -30,7 +30,7 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
             time_refresh (int, optional): time to refresh. Defaults to 300.
 
         Returns:
-            bool: exising worker.
+            bool: true if there is an existing worker.
         """
         status = get_worker_flag(
             host=redis_host,
@@ -39,6 +39,8 @@ def decorator_work_flag(myfunction: Callable) -> Callable:
             work_flag=work_flag,
             time_refresh=time_refresh,
         )
+        for _ in range(20):
+            print(status)
         if not status:
             set_work_flag(
                 host=redis_host,
