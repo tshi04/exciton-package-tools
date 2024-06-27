@@ -36,7 +36,7 @@ def get_all_docs(
     index: str,
     query: Dict[str, Any] = {"match_all": {}},
     get_source: bool = True,
-) -> Dict[str, Any]:
+):
     """Get all documents of an index that match the query.
 
     Args:
