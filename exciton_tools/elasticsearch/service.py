@@ -51,6 +51,8 @@ def get_all_docs(
     Yields:
         Iterator[Dict[str, Any]]: _description_
     """
+    if not index:
+        return
     old_scroll_id = None
     resp = client.search(
         index=index, query=query, size=200, scroll="30s", ignore=[400, 404]
