@@ -6,7 +6,7 @@ package/exciton_tools/build_and_install: ## DEV build and install
 
 package/exciton_tools/release: guard-V ## Release the package
 	@cd modules/exciton-package-tools && bump2version $(V) && git push --tags
-	@cd modules/exciton-package-tools && rm -r exciton_tools.egg-info && rm -r dist && python3 setup.py sdist bdist_wheel
+	@cd modules/exciton-package-tools && (rm -r exciton_tools.egg-info || true) && (rm -r dist || true) && python3 setup.py sdist bdist_wheel
 	@cd modules/exciton-package-tools/dist && twine upload *.whl
 
 package/exciton_tools/docs: ## Build documentation
